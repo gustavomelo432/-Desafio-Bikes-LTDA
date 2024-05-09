@@ -1,4 +1,4 @@
-name: desafio_decathlom_vitorp
+name: desafio_decathlom_gustavo
 run-name: ${{ github.actor }} Pipeline deploy !
 on:
   push:

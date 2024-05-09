@@ -78,7 +78,7 @@ resource "aws_instance" "linux" {
   instance_type               = "t2.micro"
   security_groups             = [aws_security_group.grupoefs.id]
   key_name                    = "vockey"                   # Certifique-se de ter a chave pública/privada para este nome!
-  subnet_id                   = "subnet-066eaaa450821136a" # Sub-rede específica
+  subnet_id                   = "subnet-02401ce175e59e7f8" # Sub-rede específica
   associate_public_ip_address = true
 
   user_data = <<-EOF
@@ -106,6 +106,6 @@ resource "aws_efs_file_system" "efs" {
 
 resource "aws_efs_mount_target" "efs_mount" {
   file_system_id  = aws_efs_file_system.efs.id
-  subnet_id       = "subnet-066eaaa450821136a" # Sub-rede da VPC
+  subnet_id       = "subnet-02401ce175e59e7f8" # Sub-rede da VPC
   security_groups = [aws_security_group.grupoefs.id]
 }
